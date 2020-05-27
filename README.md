@@ -11,6 +11,7 @@ TTF (available at: https://www.libsdl.org/projects/SDL_ttf/)
 
 Hexapod (available from Martin Zoula)
 
+
 The Hexapod library also requires:
 
 Dynamixel library (available from https://github.com/ROBOTIS-GIT/DynamixelSDK)
