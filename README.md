@@ -14,7 +14,7 @@ Hexapod (available from Martin Zoula)
 
 The Hexapod library also requires:
 
-Dynamixel library (available from https://github.com/ROBOTIS-GIT/DynamixelSDK)
+Dynamixel library (available from Dynamixel)
 # Compile
 To compile, you simply run the 'make' command in the directory.
 The Makefile only expands upon the Makefile from the work of Martin Zoula; to succesfully compile, you need to combine both into one.
