@@ -119,7 +119,7 @@ int main(int argc, char **argv){
 				}
 				case 2:{
 					uint64_t msSinceEpoch = std::chrono::system_clock::now().time_since_epoch().count();
-					uint64_t weirdthing = msSinceEpoch%20000000000;
+					uint64_t weirdthing = msSinceEpoch%10000000000;
 					double change = sin(((double)weirdthing/10000000000)*180*DEG2RAD);
 					float move = (float)change;
 					q[0] = {0,0,0,move};
