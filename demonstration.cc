@@ -119,10 +119,9 @@ int main(int argc, char **argv){
 				}
 				case 2:{
 					uint64_t msSinceEpoch = std::chrono::system_clock::now().time_since_epoch().count();
-					uint64_t weirdthing = msSinceEpoch%10000000000;
-					double change = sin(((double)weirdthing/10000000000)*180*DEG2RAD);
-					float move = (float)change;
-					q[0] = {0,0,0,move};
+					uint64_t halfperiod = msSinceEpoch%10000000000; //Period of 20 seconds, halved
+					double move = sin(((double)halfperiod/10000000000)*180*DEG2RAD);
+					q[0] = {0,0,0,(float)move};
 					for (int legId = 1; legId < 6; legId++){
 						q[legId] = Eigen::Vector4f::Zero(); //define q-space as just zeros
 					}
@@ -130,11 +129,10 @@ int main(int argc, char **argv){
 				}
 				case 3:{
 					uint64_t msSinceEpoch = std::chrono::system_clock::now().time_since_epoch().count();
-					uint64_t weirdthing = msSinceEpoch%10000000000;
-					double change = sin(((double)weirdthing/10000000000)*180*DEG2RAD);
-					float move = (float)change;
+					uint64_t halfperiod = msSinceEpoch%10000000000; //Period of 20 seconds, halved
+					double move = sin(((double)halfperiod/10000000000)*180*DEG2RAD);
 					for (int legId = 0; legId < 6; legId++){
-						q[legId] = {move,move,move,move}; //define q-space as just zeros
+						q[legId] = {(float)move,(float)move,(float)move,(float)move};
 					}
 					break;
 				}
